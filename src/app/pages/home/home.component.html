@@ -1,0 +1,7 @@
+<app-navbar></app-navbar>
+
+<input type="text" class="ciudad" placeholder="Ingrese una Ciudad" #ciudad>
+<button (click)="searchWeather(ciudad.value)">Clima Ciudad</button>
+<app-clima [objeto]="objeto" [esperaRespuesta]="esperaRespuesta"></app-clima>
+
+<!-- <pre>{{respuesta|json}}</pre> -->

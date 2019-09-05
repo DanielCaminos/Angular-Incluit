@@ -1,0 +1,15 @@
+<span *ngIf="objeto?.count">{{ objeto?.count }} Resultado!</span>
+<span *ngIf="esperaRespuesta">Esperando respuesta...</span>
+<div class="alert alert-danger" role="alert">
+        <span *ngIf="esperaRespuesta">Esperando respuesta...</span>
+      </div>
+
+
+
+    <div class="card text-white bg-primary mb-3" *ngFor="let city of objeto?.list" style="max-width: 18rem;">
+            <h4 class="card-header">{{ city.name }}</h4>
+            <div class="card-body">
+              <h5 class="card-title">({{ city.coord.lat }}, {{ city.coord.lon }})</h5>
+              <p class="card-text">La temperatura actual es {{ city.main.temp }} con una humedad de {{ city.main.humidity }} </p>
+            </div>
+          </div>
