@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   constructor(private clima:WeatherService) { }
 
   ngOnInit() {
+    this.searchWeather('Cordoba')
   }
   searchWeather(param : string):void
   {

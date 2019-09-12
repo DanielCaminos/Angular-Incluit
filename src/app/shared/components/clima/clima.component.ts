@@ -11,13 +11,16 @@ export class ClimaComponent implements OnInit {
 // Imput: objeto: any; 
   @Input() objeto: any;
   @Input() esperaRespuesta: any;
+  private flag: boolean;
 
   
   constructor() { }
   
  
   ngOnInit() {
-    
+    this.flag=false;
   }
+
+  
 
 }

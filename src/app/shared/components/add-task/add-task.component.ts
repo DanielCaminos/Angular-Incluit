@@ -33,7 +33,8 @@ export class AddTaskComponent implements OnInit {
       description: new FormControl('',[Validators.required]),
       date: new FormControl(null),
       deadline: new FormControl('',[Validators.required]),
-
+      realizada: new FormControl(false)
+      
     })
   }
 
@@ -41,6 +42,7 @@ export class AddTaskComponent implements OnInit {
     this.newTask.emit(this.newTaskForm.value);    
     console.log(this.newTaskForm.value);
     this.modalRef.hide();
+    
     this.newTaskForm.reset();
   }
 

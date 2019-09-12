@@ -1,8 +1,16 @@
+
+<span *ngIf="objeto==null || objeto.count == 0">  
+  <div class="alert alert-danger" role="alert">
+      <span>No se encontro tu ciudad</span>
+    </div>
+</span>
+<span *ngIf="esperaRespuesta" >
+  <div class="alert alert-danger" role="alert">
+    <span>Esperando respuesta...</span>
+  </div>
+</span>
 <span *ngIf="objeto?.count">{{ objeto?.count }} Resultado!</span>
-<span *ngIf="esperaRespuesta">Esperando respuesta...</span>
-<div class="alert alert-danger" role="alert">
-        <span *ngIf="esperaRespuesta">Esperando respuesta...</span>
-      </div>
+
 
 
 
@@ -10,6 +18,6 @@
             <h4 class="card-header">{{ city.name }}</h4>
             <div class="card-body">
               <h5 class="card-title">({{ city.coord.lat }}, {{ city.coord.lon }})</h5>
-              <p class="card-text">La temperatura actual es {{ city.main.temp }} con una humedad de {{ city.main.humidity }} </p>
+              <p class="card-text">La temperatura actual es {{ city.main.temp | centigrado }} con una humedad del {{ city.main.humidity | wind }} </p>
             </div>
           </div>

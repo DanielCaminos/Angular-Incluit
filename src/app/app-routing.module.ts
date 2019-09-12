@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { MyTasksComponent } from './pages/my-tasks/my-tasks.component';
 import { LoginComponent } from './pages/login/login.component';
+import { LoginGuard } from './guard/login.guard';
 
 
 
@@ -13,12 +14,14 @@ const routes: Routes =
 [
 {
   path: 'home',
-  component: HomeComponent
+  component: HomeComponent,
+  canActivate :  [LoginGuard]
 }
 ,
 {
   path: 'tasks',
-  component: MyTasksComponent
+  component: MyTasksComponent,
+  canActivate :  [LoginGuard]
 }
 ,
 {

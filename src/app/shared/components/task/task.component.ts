@@ -10,14 +10,23 @@ export class TaskComponent implements OnInit {
 
   @Input() task: Task;
   @Output() delete = new EventEmitter();
-  constructor() { }
+  @Output() update = new EventEmitter();
   
 
+
+  constructor() { }
+  
   ngOnInit() {
   }
 
   deleteTask(): void {
     this.delete.emit();
+  }
+
+  updateTask(task:Task):void
+  {
+    task.realizada=!task.realizada;
+    this.update.emit();
   }
 
 }

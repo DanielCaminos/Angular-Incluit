@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/shared/interfaces/task';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-my-tasks',
@@ -9,12 +10,14 @@ import { Task } from 'src/app/shared/interfaces/task';
 export class MyTasksComponent implements OnInit {
  
 myTasks: Array<Task>=[];
-  constructor() { }
+  constructor(private localStorageService:LocalStorageService) { }
 
   ngOnInit() {
-  }
-  onNewTask(task: Task): void {
-    this.myTasks.push(task)
+    this.myTasks = this.localStorageService.retrieve('tasks');
   }
 
+  onNewTask(task: Task): void {
+    this.myTasks.push(task)
+    this.localStorageService.update('tasks', this.myTasks);
+  }
 }

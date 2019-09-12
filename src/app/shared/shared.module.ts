@@ -9,6 +9,8 @@ import{ModalModule} from 'ngx-bootstrap'
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { LocalStorageService } from './services/local-storage.service';
 import{HttpClientModule} from '@angular/common/http';
+import { CentigradoPipe } from './pipes/centigrado.pipe';
+import { WindPipe } from './pipes/wind.pipe';
 
 
 
@@ -17,7 +19,7 @@ import{HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [TaskComponent, TaskListComponent, AddTaskComponent, HeaderComponent, ],
+  declarations: [TaskComponent, TaskListComponent, AddTaskComponent, HeaderComponent, CentigradoPipe, WindPipe, ],
   imports: [
     CommonModule,
     ModalModule.forRoot()
@@ -29,6 +31,6 @@ import{HttpClientModule} from '@angular/common/http';
     LocalStorageService
   ]
   ,
-  exports:[TaskComponent, TaskListComponent, AddTaskComponent, HeaderComponent ]
+  exports:[TaskComponent, TaskListComponent, AddTaskComponent, HeaderComponent, CentigradoPipe, WindPipe ]
 })
 export class SharedModule { }

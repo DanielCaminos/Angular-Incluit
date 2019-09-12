@@ -1,7 +1,14 @@
-<p class="task-title">{{ task.title }}</p>
-<span class="task-description">{{ task.description }}</span>
-<div class="task-footer">
-    <span class="task-date">{{ task.date | date:'shortDate' }}</span>
-    <span class="task-date">{{ task.deadline | date:'shortDate' }}</span>
+<div class="task-color">
+    <p class="task-title">{{ task.title }}</p>
+    <span class="task-description">{{ task.description }}</span>
+    <div class="task-footer">
+        <span class="task-date">{{ task.date | date:'shortDate' }}</span>
+        
+    </div>
+    <button type="button" class="btn-danger" (click)="deleteTask()">EliminarTarea</button>
+    <button type="button" class="task-color" (click)="updateTask(task)" [ngClass]="{'realizada':task.realizada,'noRealizada':!task.realizada}" >
+            <span *ngIf="!task.realizada">No Realizada</span>
+            <span *ngIf="task.realizada">Realizada</span>
+    </button>
+    
 </div>
-<button type="button" (click)="deleteTask()">EliminarTarea</button>

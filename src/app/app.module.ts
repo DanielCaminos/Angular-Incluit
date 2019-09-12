@@ -14,6 +14,7 @@ import{WeatherService} from './shared/services/weather.service';
 import { ClimaComponent } from './shared/components/clima/clima.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -35,6 +36,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     LoginComponent,
 
     NavbarComponent,
+    
 
     
     
@@ -47,6 +49,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
+    FormsModule,
     
 
   ],
